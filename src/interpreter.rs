@@ -124,7 +124,7 @@ impl Interpreter {
                     self.ptr = self.ptr.wrapping_add(1);
                 },
                 Opcodes::DecPtr => {
-                    if self.ptr == 0 {self.ptr = RAM_END as u32 - 1}
+                    if self.ptr == 0 {self.ptr = RAM_END as u32 - 1;}
                     self.ptr = self.ptr.wrapping_sub(1);
                 },
                 Opcodes::IncByte => {
