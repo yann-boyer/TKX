@@ -129,11 +129,11 @@ impl Interpreter {
                 },
                 Opcodes::IncByte => {
                     let prev_val = self.ram[self.ptr as usize];
-                    self.ram[self.ptr as usize] = prev_val + 1;
+                    self.ram[self.ptr as usize] = prev_val.wrapping_add(1);
                 },
                 Opcodes::DecByte => {
                     let prev_val = self.ram[self.ptr as usize];
-                    self.ram[self.ptr as usize] = prev_val - 1;
+                    self.ram[self.ptr as usize] = prev_val.wrapping_sub(1);
                 },
                 Opcodes::WriteByte => {
                     print!("{}", self.ram[self.ptr as usize] as char);
